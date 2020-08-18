@@ -13,9 +13,11 @@
 |--|--|--|--|
 |50|relu, linear|mae||
 
-![loss](/history/2/images/loss (10).png)
-![test data](/history/2/images/predict (10).png)
-![train data](/history/2/images/train (10).png)
+<div>
+	<img src="https://13.125.91.162/swmaestro/all-one-1/blob/master/history/2/images/loss%20(10).png"/>
+	<img src="https://13.125.91.162/swmaestro/all-one-1/blob/master/history/2/images/train%20(10).png"/>
+	<img src="https://13.125.91.162/swmaestro/all-one-1/blob/master/history/2/images/predict%20(10).png"/>
+</div>
 ### param 수가 적은데도 overfitting 발생, 단일값으로 회귀하지는 않음
 
 ## Conv2 + FC2
