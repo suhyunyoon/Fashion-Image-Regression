@@ -7,4 +7,4 @@ musinsa_regression = Pipeline()
 musinsa_regression.train()
 
 # 사진 예측
-print(musinsa_regression.predict(np.array([]))
+print(musinsa_regression.predict(np.array([])))
