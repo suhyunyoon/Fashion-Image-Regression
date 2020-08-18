@@ -12,7 +12,8 @@
 |epoch|activation|loss|etc|
 |--|--|--|--|
 |50|relu, linear|mae||
-![loss](10) ![test data](10) ![train data](10)
+
+![loss](/history/2/images/loss (10).png) ![test data](/history/2/images/predict (10).png) ![train data](/history/2/images/train (10).png)
 ### param 수가 적은데도 overfitting 발생, 단일값으로 회귀하지는 않음
 
 ## Conv2 + FC2
