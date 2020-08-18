@@ -1,4 +1,4 @@
-﻿# 학습 결과 기록
+# 학습 결과 기록
 
 - Musinsa-pageView-regression 모델 튜닝을 위한 학습 기록
 - Model architecture별로 정리
@@ -6,142 +6,224 @@
 	- Convolution stride: 3x3
 	- Maxpool: 2x2
 	- FC layer: 4096->1
+- 사진 순서는 Loss / Train Data / Test Data 순.
 
 ## Conv2 + FC1
-### 96,321 params
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae||
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|96,321||
 
-<div>
-	<img src="https://13.125.91.162/swmaestro/all-one-1/blob/master/history/2/images/loss%20(10).png"/>
-	<img src="https://13.125.91.162/swmaestro/all-one-1/blob/master/history/2/images/train%20(10).png"/>
-	<img src="https://13.125.91.162/swmaestro/all-one-1/blob/master/history/2/images/predict%20(10).png"/>
-</div>
 ### param 수가 적은데도 overfitting 발생, 단일값으로 회귀하지는 않음
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(10).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(10).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(10).png"/>
+</div>
 
 ## Conv2 + FC2
-### 235,976,513 params
-### 57,640,721 params(1000->1)
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae||
-![loss](8) ![test data](8) ![train data](8)
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|235,976,513||
 
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|200|relu, linear|mae||
-![loss](15) ![test data](15) ![train data](15)
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(8).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(8).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(8).png"/>
+</div>
 
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|200|relu, linear|mse||
-![loss](16) ![test data](16) ![train data](16)
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|200|relu, linear|mae|235,976,513||
 
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae|FC layer(1000->1)
-||||마지막 layer dropout 0.5|
-![loss](11) ![test data](11) ![train data](11)
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(15).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(15).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(15).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|200|relu, linear|mse|235,976,513||
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(16).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(16).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(16).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|57,640,721|FC layer(1000->1)
+|||||마지막 layer dropout 0.5|
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(11).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(11).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(11).png"/>
+</div>
 
 ## Conv2 + FC4
-### 256,851,729 params
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae||
-![loss](7) ![test data](7) ![train data](7)
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|256,851,729||
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(7).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(7).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(7).png"/>
+</div>
 
 ## Conv2 + FC5
-### 273,633,041 params
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae||
-![loss](6) ![test data](6) ![train data](6)
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|273,633,041||
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(6).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(6).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(6).png"/>
+</div>
 
 ## Conv4 + FC3
-### 122,327,057 params
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae|마지막 layer dropout 0.5
-![loss](12) ![test data](12) ![train data](12)
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|122,327,057|마지막 layer dropout 0.5
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(12).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(12).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(12).png"/>
+</div>
 
 ## Conv4 + FC4
-### 139,108,369 params
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae||
-![loss](1) ![test data](1) ![train data](1)
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|139,108,369||
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(1).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(1).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(1).png"/>
+</div>
 
 ## Conv7 + FC2
-### 14,281,489 params(1000->1)
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae|FC layer(1000->1)
-![loss](9) ![test data](9) ![train data](9)
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|14,281,489|FC layer(1000->1)
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(9).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(9).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(9).png"/>
+</div>
 
 ## Conv7 + FC4
-### 73,999,121 params
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae||
-![loss](2) ![test data](2) ![train data](2)
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|73,999,121||
 
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae|마지막 layer dropout 0.25 + l2 reg 0.001
-![loss](3) ![test data](3) ![train data](3)
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(2).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(2).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(2).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|73,999,121|마지막 layer dropout 0.25 + l2 reg 0.001
+
 ### 단일값 회귀.
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(3).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(3).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(3).png"/>
+</div>
 
 ## Conv7 + FC5
-### 90,780,433 params
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae||
-![loss](4) ![test data](4) ![train data](4)
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|90,780,433||
 
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|1000|relu, linear|mae||
-![loss](5) ![test data](5) ![train data](5)
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(4).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(4).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(4).png"/>
+</div>
 
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mse||
-![loss](13) ![test data](13) ![train data](13)
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|1000|relu, linear|mae|90,780,433||
 
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|200|relu, linear|mse||
-![loss](14) ![test data](14) ![train data](14)
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(5).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(5).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(5).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mse|90,780,433||
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(13).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(13).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(13).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|200|relu, linear|mse|90,780,433||
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(14).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(14).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(14).png"/>
+</div>
 
 ## Conv10 + FC4
-### 60,080,449 params
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae||
-![loss](18) ![test data](18) ![train data](18)
-### 20번보다 param수가 적은데 단일값으로 회귀하지 않음
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|60,080,449||
+
+### Conv13+FC5보다 param수가 적은데 단일값으로 회귀하지 않음
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(18).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(18).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(18).png"/>
+</div>
 
 ## Conv10 + FC5
-### 64,174,353 params
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae||
-![loss](19) ![test data](19) ![train data](19)
-### 20번보다 param수가 적은데 단일값으로 회귀하지 않음
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|64,174,353||
+
+### Conv13+FC5보다 param수가 적은데 단일값으로 회귀하지 않음
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(19).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(19).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(19).png"/>
+</div>
 
 ## Conv13 + FC3
-### 20,913,937 params
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae||
-![loss](17) ![test data](17) ![train data](17)
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|20,913,937||
+
 ### 단일값 회귀.
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(17).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(17).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(17).png"/>
+</div>
 
 ## Conv13 + FC5
-### 67,163,969 params
-|epoch|activation|loss|etc|
-|--|--|--|--|
-|50|relu, linear|mae||
-![loss](20) ![test data](20) ![train data](20)
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|67,163,969||
+
 ### 단일값 회귀.
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(20).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(20).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(20).png"/>
+</div>
