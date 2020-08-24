@@ -291,3 +291,14 @@
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(20).png"/>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(20).png"/>
 </div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|1000|relu, linear|mae|67,163,969||
+
+### 단일값 회귀.
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(21).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(21).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(21).png"/>
+</div>
