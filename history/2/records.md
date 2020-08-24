@@ -76,7 +76,7 @@
 
 |epoch|activation|loss|params|etc|
 |--|--|--|--|--|
-|50|relu, linear|mae|256,851,729| 마지막 dropout 0.5 |
+|50|relu, linear|mae|256,851,729| 전처리 개선, 마지막 dropout 0.5 |
 
 <div>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(22).png"/>
@@ -86,7 +86,7 @@
 
 |epoch|activation|loss|params|etc|
 |--|--|--|--|--|
-|200|relu, linear|mae|256,851,729| 마지막 dropout 0.5 |
+|200|relu, linear|mae|256,851,729| 전처리 개선, 마지막 dropout 0.5 |
 
 <div>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(23).png"/>
@@ -225,7 +225,7 @@
 
 |epoch|activation|loss|params|etc|
 |--|--|--|--|--|
-|200|relu, linear|mse|90,780,433| 전처리 개선 |
+|200|relu, linear|mse|90,780,433||
 
 <div>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(13).png"/>
