@@ -2,11 +2,12 @@
 
 - Musinsa-pageView-regression 모델 튜닝을 위한 학습 기록
 - Model architecture별로 정리
-- Convolution 구조는 VGG Net구조를 참고
+- Convolution 구조는 VGG16 구조를 참고
 	- Convolution stride: 3x3
 	- Maxpool: 2x2
 	- FC layer: 4096->1
 - 사진 순서는 Loss / Train Data / Test Data 순.
+- 22번 사진부터는 전처리 시 제일 작은 데이터를 제외, 기존 log-scale후 arctan 추가, 크롤링 된 이산 데이터들을 랜덤으로 연속값으로 변환
 
 ## Conv2 + FC1
 |epoch|activation|loss|params|etc|
@@ -71,6 +72,26 @@
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(7).png"/>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(7).png"/>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(7).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|256,851,729| 마지막 dropout 0.5 |
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(22).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(22).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(22).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|200|relu, linear|mae|256,851,729| 마지막 dropout 0.5 |
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(23).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(23).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(23).png"/>
 </div>
 
 ## Conv2 + FC5
@@ -162,6 +183,17 @@
 
 |epoch|activation|loss|params|etc|
 |--|--|--|--|--|
+|50|relu, linear|mae|90,780,433| 전처리 개선 |
+|||||마지막 layer부터 dropout 0.5 + 0.25 * 3|
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(26).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(26).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(26).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
 |50|relu, linear|mse|90,780,433||
 
 <div>
@@ -172,12 +204,44 @@
 
 |epoch|activation|loss|params|etc|
 |--|--|--|--|--|
+|50|relu, linear|mse|90,780,433| 전처리 개선 |
+|||||마지막 layer부터 dropout 0.5 + 0.25 * 3|
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(25).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(25).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(25).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
 |200|relu, linear|mse|90,780,433||
 
 <div>
-	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(14).png"/>
-	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(14).png"/>
-	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(14).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(24).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(24).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(24).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|200|relu, linear|mse|90,780,433| 전처리 개선 |
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(13).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(13).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(13).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mse|90,780,433| 전처리 개선 |
+|||||마지막 layer부터 dropout 0.5 + 0.25 * 3|
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(27).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(27).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(27).png"/>
 </div>
 
 ## Conv10 + FC4
