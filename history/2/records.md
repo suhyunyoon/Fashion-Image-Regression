@@ -215,7 +215,7 @@
 
 |epoch|activation|loss|params|etc|
 |--|--|--|--|--|
-|200|relu, linear|mse|90,780,433||
+|200|relu, linear|mse|90,780,433| 전처리 개선|
 
 <div>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(24).png"/>
@@ -235,7 +235,7 @@
 
 |epoch|activation|loss|params|etc|
 |--|--|--|--|--|
-|50|relu, linear|mse|90,780,433| 전처리 개선 |
+|200|relu, linear|mse|90,780,433| 전처리 개선 |
 |||||마지막 layer부터 dropout 0.5 + 0.25 * 3|
 
 <div>
