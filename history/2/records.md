@@ -21,6 +21,26 @@
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(10).png"/>
 </div>
 
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|200|relu, linear|mae|96,321||
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(31).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(31).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(31).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|740|relu, linear|mae|96,321| 마지막 layer dropout 0.5, early stop|
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(32).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(32).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(32).png"/>
+</div>
+
 ## Conv2 + FC2
 |epoch|activation|loss|params|etc|
 |--|--|--|--|--|
@@ -125,6 +145,28 @@
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(1).png"/>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(1).png"/>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(1).png"/>
+</div>
+
+## Conv4 + FC5
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|362,800,977| FC(10000->4096->1) |
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(29).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(29).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(29).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|200|relu, linear|mae|362,800,977| FC(10000->4096->1) |
+|||||마지막 layer부터 dropout 0.5 + 0.25 * 3|
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(28).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(28).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(28).png"/>
 </div>
 
 ## Conv7 + FC2
@@ -278,6 +320,18 @@
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(17).png"/>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(17).png"/>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(17).png"/>
+</div>
+
+## Conv13 + FC4
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|37,695,249||
+
+### 단일값 회귀.
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(30).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(30).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(30).png"/>
 </div>
 
 ## Conv13 + FC5
