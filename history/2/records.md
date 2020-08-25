@@ -334,6 +334,39 @@
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(30).png"/>
 </div>
 
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|37,695,249| 마지막부터 dropout 0.5 + 0.25 * 3|
+
+### 단일값 회귀.
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(33).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(33).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(33).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|37,695,249| 마지막 dropout 0.5 |
+||||| He-normalization |
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(34).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(34).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(34).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|37,695,249| 마지막부터 dropout 0.5 + 0.25 * 3 |
+||||| He-normalization |
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(35).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(35).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(35).png"/>
+</div>
+
 ## Conv13 + FC5
 |epoch|activation|loss|params|etc|
 |--|--|--|--|--|
@@ -355,4 +388,15 @@
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(21).png"/>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(21).png"/>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(21).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mae|37,695,249| FC(10000->4096->1), 마지막부터 dropout 0.5 + 0.25 * 3 |
+||||| He-normalization |
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(36).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(36).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(36).png"/>
 </div>
