@@ -41,6 +41,18 @@
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(32).png"/>
 </div>
 
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|1000|relu, linear|mae|96,321| dropout 0.3, He-normalization |
+||||| 첫 pooling: Average pooling |
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(38).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(38).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(38).png"/>
+</div>
+
+
 ## Conv2 + FC2
 |epoch|activation|loss|params|etc|
 |--|--|--|--|--|
@@ -284,6 +296,17 @@
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(27).png"/>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(27).png"/>
 	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(27).png"/>
+</div>
+
+|epoch|activation|loss|params|etc|
+|--|--|--|--|--|
+|50|relu, linear|mse|90,780,433| fc모두 dropout 0.3, He-normalization |
+||||| 첫 pooling: Average pooling, conv layer batch norm |
+
+<div>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/loss%20(37).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/train%20(37).png"/>
+	<img width="33%" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/predict%20(37).png"/>
 </div>
 
 ## Conv10 + FC4
