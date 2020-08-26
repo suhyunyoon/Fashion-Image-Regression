@@ -31,6 +31,7 @@ class Model:
         #self.current_dir = os.path.join(os.getcwd(), 'drive/My Drive/Colab Notebooks')
         self.current_dir = p
         self.item_path = os.path.join(self.current_dir, 'musinsa_data')
+        self.temp_path = os.path.join(self.current_dir, 'temp')
         # 한글 데이터를 숫자로(추후 크롤링 코드 수정해서 숫자 값으로 받아오게)
         # 100만 회 이상 -> 1000000
         def numtext_to_num(p):
@@ -80,7 +81,7 @@ class Model:
             # load saved .npy file
             try:
                 # 이미지 numpy 배열이 저장되어 있는지 확인
-                tempX = np.load(os.path.join(self.item_path, item + '.npy'))
+                tempX = np.load(os.path.join(self.temp_path, item + '.npy'))
                 print('Reading ' + item + '.npy...')
             # read all .jpg file
             except:
@@ -100,7 +101,7 @@ class Model:
                         print(i)
                 tempX = np.array(tempX)
                 print('save ' + item + '.npy...')
-                np.save(os.path.join(self.item_path, item + '.npy'), tempX)
+                np.save(os.path.join(self.temp_path, item + '.npy'), tempX)
             # concat
             X = np.concatenate((X, tempX), axis=0)
         return X
@@ -127,7 +128,7 @@ class Model:
         return self._split_data(X, Y)
 
     def _load_model(self):
-        h5_file = os.path.join(self.current_dir, 'model.h5')
+        h5_file = os.path.join(self.temp_path, 'model.h5')
         if self.model is None:
             try:
                 self.model = load_model(h5_file)
@@ -139,7 +140,7 @@ class Model:
         plt.plot(hist.history['loss'][1:], 'b-', label="training")
         plt.plot(hist.history['val_loss'][1:], 'r:', label="validation")
         plt.legend()
-        plt.savefig(os.path.join(self.current_dir, 'loss.png'), dpi=300)
+        plt.savefig(os.path.join(self.temp_path, 'loss.png'), dpi=300)
         plt.show()
 
         # Make prediction data frame
@@ -150,7 +151,7 @@ class Model:
         scatter = plt.scatter(np.arange(test_pred.shape[0]), pred_labels[index], c='b', s=0.1, label='test label')
         scatter = plt.scatter(np.arange(test_pred.shape[0]), test_pred[index], c='r', s=0.1, label='predict')
         plt.legend()
-        plt.savefig(os.path.join(self.current_dir, 'predict.png'), dpi=300)
+        plt.savefig(os.path.join(self.temp_path, 'predict.png'), dpi=300)
         plt.show()
 
     def _train(self, train_images, train_labels, test_images, test_labels):
@@ -169,7 +170,7 @@ class Model:
         self._plot(hist, test_images[-2000:], test_labels[-2000:])
 
         # save model
-        h5_file = os.path.join(self.current_dir, 'model.h5')
+        h5_file = os.path.join(self.temp_path, 'model.h5')
         self.model.save(h5_file)
 
     def predict(self, test_images, test_labels):
