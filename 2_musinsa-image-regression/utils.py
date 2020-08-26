@@ -14,6 +14,7 @@ from models import CNN
 class Model:
     model = None
     def __init__(self, p = os.getcwd()):
+        np.random.seed(0)
         self.item_list = {
             '단화': 0,
             '데님': 1,
@@ -36,15 +37,22 @@ class Model:
         # 100만 회 이상 -> 1000000
         def numtext_to_num(p):
             mult = 1
+            garbage = 0
             p = p.strip().replace(' ', '')
-            p = p.replace('회이상', '')
+            # add random value
+            if p.endswith('회이상'):
+                p = p.replace('회이상', '')
+                garbage = 1
+            # N천 회 이상
             if p.endswith('천'):
                 p = p.replace('천', '')
                 mult = 1000
+            # N만 회 이상
             elif p.endswith('만'):
                 p = p.replace('만', '')
                 mult = 10000
             ret = int(float(p) * mult)
+            ret += np.random.randint(10 ** (len(str(ret)) - 1)) * garbage
             return ret
         # numpy vectorize 함수화
         self._t2n = np.vectorize(numtext_to_num)
@@ -116,24 +124,32 @@ class Model:
         return train_images, train_labels, test_images, test_labels
 
     def _preprocessing(self, X, Y):
+        # 제일 아래 1% 자름
+        length = len(Y)
+        index = np.argsort(Y)[length // 100:]
+
         # shuffle
-        index = np.argsort(Y)[:-1]
         np.random.shuffle(index)
         # rand_index = np.random.permutation(num_X)
+
+        # image 0-1 scale
         X = X[index] / 255.0
+
         # 좀더 선형으로 만들기
-        Y = np.log(Y[index] + 1)
+        Y = np.arctan(np.log(Y[index] + 1))
         Y = (Y - Y.min()) / (Y.max() - Y.min())
         # Y = np.arctan(Y - Y.mean())
+
         return self._split_data(X, Y)
 
+    # Not use now
     def _load_model(self):
         h5_file = os.path.join(self.temp_path, 'model.h5')
         if self.model is None:
             try:
                 self.model = load_model(h5_file)
             except:
-                self.model = CNN.get_model()
+                pass
 
     def _plot(self, hist, test_images, test_labels):
         # 의미없는 첫 epoch 제외(loss가 너무 크게 나옴)
@@ -161,7 +177,7 @@ class Model:
         early = EarlyStopping(monitor='loss', min_delta=0, patience=300, verbose=1, mode='auto')
 
         # BUILD MODEL
-        self._load_model()
+        self.model = CNN.get_model()
 
         #%%time
         hist = self.model.fit(train_images, train_labels, epochs=epoch, batch_size=batch_size,
