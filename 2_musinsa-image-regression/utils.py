@@ -172,7 +172,7 @@ class Model:
 
     def _train(self, train_images, train_labels, test_images, test_labels):
         # PARAMETERS
-        epoch = 200
+        epoch = 1000
         batch_size = 512
         early = EarlyStopping(monitor='loss', min_delta=0, patience=300, verbose=1, mode='auto')
 
