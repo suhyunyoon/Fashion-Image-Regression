@@ -1,7 +1,7 @@
-from utils import Pipeline
+from utils import Model
 import numpy as np
 
-musinsa_regression = Pipeline()
+musinsa_regression = Model()
 
 # musinsa_data폴더의 데이터로 학습 + 결과 출력
 musinsa_regression.train()

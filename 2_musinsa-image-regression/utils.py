@@ -11,7 +11,7 @@ from keras.callbacks import EarlyStopping
 
 from models import CNN
 
-class Pipeline:
+class Model:
     model = None
     def __init__(self, p = os.getcwd()):
         self.item_list = {
