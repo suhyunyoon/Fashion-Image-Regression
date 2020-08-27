@@ -51,5 +51,5 @@ VGG16 구조를 참고한 CNN 구현 코드.
 
 /history/2/README.md 스크린샷
 <div>
- <img style="border:1px" src="https://13.125.91.162/swmaestro/all-one-1/raw/master/history/2/images/screenshot.png"/>
+ <img src="/history/2/images/screenshot.png"/>
 </div>
