@@ -45,7 +45,7 @@ VGG16 구조를 참고한 CNN 구현 코드.
 "단화/1.jpg", "단화/1368.jpg" 등의 image data로 저장된다.
 
 ## history
-[Train Records Document(/history/2/README.md)](https:/https://git.swmgit.org/swmaestro/all-one-1/blob/master/history/2/README.md)
+[Train Records Document(/history/2/README.md)](https://git.swmgit.org/swmaestro/all-one-1/blob/master/history/2/README.md)
 - 모델을 훈련하며 훈련 결과를 기록해 놓는 directory
 - 구조를 계속해서 바꿔나가며 개선중이다.
 
