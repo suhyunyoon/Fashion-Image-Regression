@@ -1,4 +1,6 @@
-# All-one-1
+# fashion-image-regression-with-multi-feature-extraction
+## SW마에스트로 2020 
+
 서버 내 조회수 예측 모델부분 코드
 
 수집된 이미지와 조회수 등의 상품정보를 전처리,
