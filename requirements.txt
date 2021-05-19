@@ -1,0 +1,10 @@
+numpy
+Pillow
+matplotlib
+pandas
+scikit-image
+scikit-learn
+scipy
+tensorflow==2.1.0
+opencv-python
+h5py

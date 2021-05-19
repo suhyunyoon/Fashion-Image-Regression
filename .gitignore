@@ -1,2 +1,7 @@
-/2_musinsa-image-regression/musinsa_data/
-/2_musinsa-image-regression/temp/
+/before/2_musinsa-image-regression/musinsa_data/
+/before/2_musinsa-image-regression/temp/
+/Mask_RCNN/
+/before/musinsa_data/
+/temp/
+.idea
+
